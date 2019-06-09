@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Congrats = ({ success }) => {
-  // return <div data-test="component-congrats" />;
   if (success) {
     return (
       <div data-test="component-congrats">
