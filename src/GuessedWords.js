@@ -6,11 +6,12 @@ const GuessedWords = ({ guessedWords }) => {
   if (guessedWords.length) {
     content = (
       <div data-test="guessed-words">
-        <table>
-          <thead>
+        <h2>Guessed Words</h2>
+        <table className="table table-small">
+          <thead className="thead-light">
             <tr>
-              <td>Word</td>
-              <td>Letters matched</td>
+              <th>Word</th>
+              <th>Letters matched</th>
             </tr>
             {guessedWords.map((word, i) => {
               return (
