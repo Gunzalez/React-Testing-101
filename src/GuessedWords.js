@@ -4,14 +4,33 @@ import PropTypes from "prop-types";
 const GuessedWords = ({ guessedWords }) => {
   let content;
   if (guessedWords.length) {
-    return <div data-test="component-guessedwords">{content}</div>;
-  } else {
-    return (
-      <div data-test="component-guessedwords">
-        <span data-test="guess-instructions">Try to guess the word!</span>
+    content = (
+      <div data-test="guessed-words">
+        <table>
+          <thead>
+            <tr>
+              <td>Word</td>
+              <td>Letters matched</td>
+            </tr>
+            {guessedWords.map((word, i) => {
+              return (
+                <tr data-test="guessed-word" key={i}>
+                  <td>{word.guessedWord}</td>
+                  <td>{word.lettersMatchCount}</td>
+                </tr>
+              );
+            })}
+          </thead>
+        </table>
       </div>
     );
+  } else {
+    content = (
+      <span data-test="guess-instructions">Try to guess the word!</span>
+    );
   }
+
+  return <div data-test="component-guessedwords">{content}</div>;
 };
 
 GuessedWords.propTypes = {
