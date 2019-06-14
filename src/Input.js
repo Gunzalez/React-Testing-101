@@ -38,6 +38,7 @@ class Input extends Component {
         </button>
       </form>
     );
+
     return (
       <div className="Input" data-test="component-input">
         {content}
